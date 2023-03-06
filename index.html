@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="container-fluid"> -->
+    <div class="container">
+
+        <div class="row text-center">
+            <!-- <div class="col-2">
+            </div> -->
+            <div class="col-12">
+
+                <div id="main" class="main-background p-5">
+                    <h3 id="title1" class="m-5">TicTacToe</h3>
+
+                    <form id="form1" class="mt-5">
+                        <div class="row">
+                            <div class="col-3">
+
+                            </div>
+
+                            <div class="col-6">
+                                <input type="text" id="one" class="form-control" name="player1" placeholder="Player X">
+                                <input type="text" id="two" class="form-control mt-3" name="player2" placeholder="Player O">
+                            </div>
+
+                            <div class="col-3">
+
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="mt-5">
+                        <!-- <button onclick="play()">play</button> -->
+                        <a id="playButton" class="btn btn-primary" style="background-color: #212c59; border: none;" onclick="play()">Play</a>
+                    </div>
+
+                    <div id="title2" class="row mt-4 d-none">
+                        <div class="col-3 text-center">
+                        </div>
+
+                        <div class="col-2 text-center">
+                            <button id="reset-button" type="button" class="btn btn-secondary" style="background-color: #212c59; border: none;" onclick="reset()">New Game</button>
+                        </div>
+                        <div class="col-2 text-center">
+                            <h5 id="mainTitle" style="font-size: 30px;">TicTacToe</h5>
+                        </div>
+                        <div class="col-2 text-center">
+                            <button id="starting-turn-button" type="button" class="btn btn-secondary" style="background-color: #212c59; border: none;" onclick="starts()"></button>
+                        </div>
+
+                        <div class="col-3 text-center">
+                        </div>
+                        
+                    </div>
+                   
+
+                    <!-- ROW 1 of tictactoe -->
+                    <div id="row1" class="row mt-4 d-none">
+                        <div class="col-4 text-center">
+            
+                        </div>
+                        <div class="col-1 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('1')">
+                                <img class="border border-3 border-dark rounded" id="1" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-2 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('2')">
+                                <img class="border border-3 border-dark rounded" id="2" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-1 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('3')">
+                                <img class="border border-3 border-dark rounded" id="3" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-4 text-center">
+                            
+                        </div>
+                    </div>
+
+                    <!-- ROW 2 of tictactoe -->
+                    <div id="row2" class="row mt-5 d-none">
+                        <div class="col-4 text-center">
+                            
+                        </div>
+                        <div class="col-1 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('4')">
+                                <img class="border border-3 border-dark rounded" id="4" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-2 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('5')">
+                                <img class="border border-3 border-dark rounded" id="5" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-1 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('6')">
+                                <img class="border border-3 border-dark rounded" id="6" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-4 text-center">
+                            
+                        </div>
+                    </div>
+
+                    <!-- ROW 3 of tictactoe -->
+                    <div id="row3" class="row mt-5 d-none">
+                        <div class="col-4 text-center">
+                            
+                        </div>
+                        <div class="col-1 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('7')">
+                                <img class="border border-3 border-dark rounded" id="7" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-2 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('8')">
+                                <img class="border border-3 border-dark rounded" id="8" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-1 text-center">
+                            <a style="cursor:pointer;" onclick="clicked('9')">
+                                <img class="border border-3 border-dark rounded" id="9" src="empty.png">
+                            </a>
+                        </div>
+                        <div class="col-4 text-center">
+                            
+                        </div>
+                    </div>
+                    <div id="row4" class="row mt-5 d-none">
+                        <div class="col-4 text-center">
+                        </div>
+                        <div class="col-4 text-center">
+                            <h5 id=turnTitle style="font-size: 30px;">Test</h5>
+                        </div>
+                        <div class="col-4 text-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+
+
+        var table = [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', ''],
+        ]
+        var turn = true;
+        var starting = true;  
+
+        var Player_1 = '';
+        var Player_2 = '';
+
+        
+
+        var rowNumber = '';
+        var columnNumber = '';
+
+        var winner = false;
+
+
+        function clicked(boxNumber){
+            console.clear();
+            // console.log(boxNumber);
+            columnNumber = (boxNumber-1)%3;
+            if(boxNumber-columnNumber==1){
+                rowNumber = 0;
+            }
+            else if(boxNumber-columnNumber==4){
+                rowNumber = 1;
+            }
+            else{
+                rowNumber = 2;
+            }
+            // console.log(rowNumber);
+            // console.log(columnNumber+'\n---');
+
+            //first check if object already exists in that table, then add if it doesn't, also check if someone already won
+            if(table[rowNumber][columnNumber]==''&&winner==false){
+                if (turn){
+                    document.getElementById(boxNumber).src="x.png";
+                    table[rowNumber][columnNumber] = 'x';
+                    turn = false;
+                    document.getElementById("turnTitle").innerHTML = Player_2 + '\'s Turn';
+                }
+                else{
+                    document.getElementById(boxNumber).src="o.png";
+                    table[rowNumber][columnNumber] = 'o';
+                    turn = true;
+                    document.getElementById("turnTitle").innerHTML = Player_1 + '\'s Turn';
+                }
+                //print the table in the colsole
+                for(let i = 0; i < 3; i++){
+                    // for(let j = 0; j < 3; j++){
+                        console.log( table[i] ); 
+                    // }
+                    }
+
+                
+            }
+        
+
+            
+            if(table[0][0]==table[1][1]&&table[1][1]==table[2][2]&&table[1][1]!=''){
+                win();
+            }
+            else if(table[0][2]==table[1][1]&&table[1][1]==table[2][0]&&table[1][1]!=''){
+                win();
+            }
+            else{
+               for(let i = 0; i < 3; i++){
+                    if(table[i][0]==table[i][1]&&table[i][1]==table[i][2]&&table[i][0]!=''){
+                        win();
+                        break;
+                    }   
+                    if(table[0][i]==table[1][i]&&table[1][i]==table[2][i]&&table[0][i]!=''){
+                        win();
+                        break;
+                    }   
+                }    
+            }
+            
+            
+        }
+        function win(){
+            //sees who won based on what the last turn was, and outputs winning results.
+            winner = true;
+
+            if(turn){
+                document.getElementById("turnTitle").innerHTML = Player_2 + ' WINS!';
+            }
+            else{
+                document.getElementById("turnTitle").innerHTML = Player_1 + ' WINS!';
+            }
+
+
+
+        }
+        function play(){
+
+            Player_1 = document.getElementById("one").value;
+            // console.log(Player_1);
+            Player_2 = document.getElementById("two").value;
+            // console.log(Player_2); 
+            
+            document.getElementById("turnTitle").innerHTML = Player_1 + '\'s Turn';
+
+            if (Player_1=="" || Player_2==""){
+                alert("Please enter valid player names");
+            }
+            else{
+                document.getElementById("starting-turn-button").innerHTML = Player_1 + ' (X) Starts';
+
+                //hide form and inputs
+                document.getElementById("title1").classList.add("d-none");
+                document.getElementById("form1").classList.add("d-none");
+                document.getElementById("playButton").classList.add("d-none");
+
+                //make rest visible
+                document.getElementById("title2").classList.remove("d-none");
+                document.getElementById("row1").classList.remove("d-none");
+                document.getElementById("row2").classList.remove("d-none");
+                document.getElementById("row3").classList.remove("d-none");  
+                document.getElementById("row4").classList.remove("d-none");  
+
+            }        
+        }
+        function reset(){
+            
+            document.getElementById("mainTitle").innerHTML = 'TicTacToe';
+
+            winner = false;
+
+            table = [
+                ['', '', ''],
+                ['', '', ''],
+                ['', '', ''],
+            ]
+        
+            for(let i = 1; i <= 9; i++){
+                j = i.toString();
+                document.getElementById(j).src="empty.png";
+            }
+            if (starting == true){
+                turn = true;
+                document.getElementById("turnTitle").innerHTML = Player_1 + '\'s Turn';
+            }
+            else{
+                turn = false;
+                document.getElementById("turnTitle").innerHTML = Player_2 + '\'s Turn';
+            }
+        }
+        function starts(){ 
+            reset();
+            
+            if (starting){
+                document.getElementById("starting-turn-button").innerHTML = Player_2 + ' (O) Starts';
+                turn = false;
+                starting = false; 
+                document.getElementById("turnTitle").innerHTML = Player_2 + '\'s Turn';
+            }
+            else{
+                document.getElementById("starting-turn-button").innerHTML = Player_1 + ' (X) Starts';
+                turn = true;
+                starting = true;
+                document.getElementById("turnTitle").innerHTML = Player_1 + '\'s Turn';
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

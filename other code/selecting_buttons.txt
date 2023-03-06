@@ -1,0 +1,45 @@
+    /* .selected{
+        filter: brightness(84%);
+        -webkit-filter: brightness(84%);
+    } */
+    
+    
+    <!-- <div id="button-div">
+        <button id="button-a" class="button-type-1" onclick="buttonA()">
+            A
+        </button>
+        <button id="button-b" class="button-type-1" onclick="buttonB()">
+            B
+        </button>
+        <button id="button-c" class="button-type-1" onclick="buttonC()">
+            C
+        </button>
+        <button id="button-d" class="button-type-1" onclick="buttonD()">
+            D
+        </button>
+    </div> -->
+    
+    
+    
+    //     function buttonA(){
+    //         removeSelected();
+    //         document.getElementById("button-a").classList.add("selected");
+    //     }
+    //     function buttonB(){
+    //         removeSelected();
+    //         document.getElementById("button-b").classList.add("selected");
+    //     }
+    //     function buttonC(){
+    //         removeSelected();
+    //         document.getElementById("button-c").classList.add("selected");
+    //     }
+    //     function buttonD(){
+    //         removeSelected();
+    //         document.getElementById("button-d").classList.add("selected");
+    //     }
+    //     function removeSelected(){
+    //     document.getElementById("button-a").classList.remove("selected");
+    //     document.getElementById("button-b").classList.remove("selected");
+    //     document.getElementById("button-c").classList.remove("selected");
+    //     document.getElementById("button-d").classList.remove("selected");
+    // }

@@ -1,0 +1,9 @@
+body{margin: 100px; color: #212c59;}
+        
+.main-background{
+    background-color: #9DADDF;
+    border-radius: 20px;
+    height: 700px;
+    box-shadow: 1px 1px 5px #212c59;
+}
+
